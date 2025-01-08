@@ -1,0 +1,38 @@
+{
+  "name": "astro-lite",
+  "description": "A minimal set of large UI components for Astro",
+  "version": "0.0.1",
+  "main": "index.ts",
+  "module": "index.ts",
+  "files": [
+    "src/components",
+    "index.ts"
+  ],
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarcosKlender/astrolite.git"
+  },
+  "keywords": [
+    "astro",
+    "ui",
+    "components",
+    "library",
+    "withastro",
+    "astro-component",
+    "docs"
+  ],
+  "author": "MarcosKlender",
+  "license": "MIT",
+  "devDependencies": {
+    "@astrojs/starlight": "^0.30.5",
+    "astro": "^5.0.2",
+    "sharp": "^0.32.5"
+  }
+}

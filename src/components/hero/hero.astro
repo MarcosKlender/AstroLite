@@ -1,0 +1,136 @@
+---
+import "../../styles/global.css";
+
+export interface Props {
+    upperLink?: string;
+    upperText?: string;
+    title: string;
+    description: string;
+    primaryLink?: string;
+    primaryText?: string;
+    secondaryLink?: string;
+    secondaryText?: string;
+}
+
+const {
+    upperText,
+    upperLink,
+    title,
+    description,
+    primaryText,
+    primaryLink,
+    secondaryText,
+    secondaryLink,
+} = Astro.props;
+---
+
+<section class="hero-lite">
+    {
+        upperText && upperLink && (
+            <div class="upper">
+                <a href={upperLink}>{upperText}</a>
+            </div>
+        )
+    }
+    <div class="main">
+        <h1>{title}</h1>
+        <p>{description}</p>
+    </div>
+    <div class="bottom">
+        {
+            primaryText && primaryLink && (
+                <a href={primaryLink} class="primary">
+                    {primaryText}
+                </a>
+            )
+        }
+        {
+            secondaryText && secondaryLink && (
+                <a href={secondaryLink} class="secondary">
+                    {secondaryText}
+                </a>
+            )
+        }
+    </div>
+</section>
+
+<style>
+    .hero-lite {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-block: 50px;
+        text-align: center;
+
+        .upper {
+            a {
+                font-size: 0.9rem;
+                background-color: light-dark(
+                    hsl(220, 15%, 95%),
+                    hsl(215, 30%, 15%)
+                );
+                padding: 10px 20px;
+                border-radius: 20px;
+                text-decoration: none;
+                color: light-dark(var(--text-dark), var(--text-light));
+
+                &:hover {
+                    background-color: light-dark(
+                        hsl(220, 15%, 90%),
+                        hsl(215, 30%, 20%)
+                    );
+                }
+            }
+        }
+
+        .main {
+            h1 {
+                font-size: 2.5rem;
+                margin-block: 20px 10px;
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+        }
+
+        .bottom {
+            display: flex;
+            gap: 10px;
+
+            @media (width < 640px) {
+                flex-direction: column;
+                width: 80%;
+            }
+
+            a {
+                font-size: 1rem;
+                padding: 10px 20px;
+                border-radius: 20px;
+                text-decoration: none;
+            }
+
+            .primary {
+                background-color: hsl(225, 75%, 50%);
+                color: var(--text-light);
+
+                &:hover {
+                    background-color: hsl(225, 75%, 45%);
+                }
+            }
+
+            .secondary {
+                border: 1px solid hsl(0, 0%, 50%);
+                color: light-dark(var(--text-dark), var(--text-light));
+
+                &:hover {
+                    background-color: light-dark(
+                        hsl(0, 0%, 90%),
+                        hsl(215, 20%, 15%)
+                    );
+                }
+            }
+        }
+    }
+</style>
