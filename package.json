@@ -4,6 +4,11 @@
   "version": "0.0.3",
   "main": "index.ts",
   "module": "index.ts",
+  "homepage": "https://astro-lite.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarcosKlender/astrolite.git"
+  },
   "files": [
     "src/components",
     "src/styles",
@@ -15,10 +20,6 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MarcosKlender/astrolite.git"
   },
   "keywords": [
     "astro",
