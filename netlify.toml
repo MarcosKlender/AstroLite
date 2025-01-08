@@ -1,0 +1,3 @@
+[build]
+  command = "pnpm install --dev --shamefully-hoist && pnpm build"
+  publish = "dist"

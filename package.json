@@ -1,11 +1,12 @@
 {
   "name": "astro-lite",
   "description": "A minimal set of large UI components for Astro",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.ts",
   "module": "index.ts",
   "files": [
     "src/components",
+    "src/styles",
     "index.ts"
   ],
   "scripts": {
