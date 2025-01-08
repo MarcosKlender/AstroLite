@@ -15,7 +15,7 @@
 ![MDX](https://img.shields.io/badge/MDX-1B1F24?style=for-the-badge&logo=mdx&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-Open source components and blocks library for Astro.
+Open source and lightweight UI blocks library for Astro.
 
 </div>
 
@@ -40,8 +40,10 @@ Open source components and blocks library for Astro.
 
 ## About The Project
 
-AstroLite is a minimal set of large UI components for Astro, like:
-- Hero Sections
+AstroLite is a lightweight UI library designed specifically for Astro. It provides a set of reusable components that help you build modern, responsive web applications with ease. With AstroLite, you can quickly prototype and develop your projects, leveraging its simplicity and efficiency.
+
+**Available Blocks**
+- Hero Section
 
 <p align="right"><a href="#readme-top">Back to top ⬆️</a></p>
 
@@ -51,7 +53,7 @@ AstroLite is a minimal set of large UI components for Astro, like:
 ### Prerequisites
 
 - **Node.js** -> `v18.17.1` or `v20.3.0`, `v22.0.0` or higher. (`v19` and `v21` are not supported)
-- **Visual Studio Code** -> with the [Official Astro Extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode).
+- **Terminal** -> NPM packages are accessed through its command-line interface (CLI).
 
 Personally I prefer using `pnpm` instead `npm` and to install it you can use:
 
@@ -67,7 +69,7 @@ Personally I prefer using `pnpm` instead `npm` and to install it you can use:
    ```sh
    pnpm install astro-lite
    ```
-2. Start using the AstroLite's components!
+2. You can now start using AstroLite in your project! 🚀
    
 <p align="right"><a href="#readme-top">Back to top ⬆️</a></p>
 

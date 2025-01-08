@@ -10,6 +10,8 @@ export default defineConfig({
 			title: 'AstroLite',
 			social: {
 				github: 'https://github.com/marcosklender/astrolite',
+				linkedin: 'https://www.linkedin.com/in/marcosklender/?locale=en_US',
+				email: 'mailto:marcosklender@gmail.com'
 			},
 			sidebar: [
 				{

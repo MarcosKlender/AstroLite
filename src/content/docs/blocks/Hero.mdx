@@ -5,16 +5,18 @@ description: Hero Block.
 import { Code } from '@astrojs/starlight/components';
 import Hero from '../../../components/hero/hero.astro';
 
-To display a Hero block, use the `<Hero>` component.
+To display a Hero block, use the `<Hero />` component.
+
+The Hero block is a full-width section that typically includes a title, description, and call-to-action buttons. Use it to introduce your website or application to users.
 
 <Hero
-    upperLink='#'
+    upperLink='https://example.com/'
     upperText='Lorem ipsum dolor sit amet'
     title='Welcome to AstroLite'
     description='Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam quis nostrud exercitation.'
-    primaryLink='#'
+    primaryLink='https://example.com/'
     primaryText='Get Started'
-    secondaryLink='#'
+    secondaryLink='https://example.com/'
     secondaryText='Learn More'
 />
 
@@ -27,16 +29,14 @@ import { Hero } from 'astro-lite';
 ## Usage
 
 ```js title="src/components/example.astro"
-import { Hero } from 'astro-lite';
-
 <Hero
-    upperLink='#'
+    upperLink='https://example.com/'
     upperText='Lorem ipsum dolor sit amet'
     title='Welcome to AstroLite'
     description='Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam quis nostrud exercitation.'
-    primaryLink='#'
+    primaryLink='https://example.com/'
     primaryText='Get Started'
-    secondaryLink='#'
+    secondaryLink='https://example.com/'
     secondaryText='Learn More'
 />
 ```
