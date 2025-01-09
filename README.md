@@ -43,7 +43,9 @@ Open source and lightweight UI blocks library for Astro.
 AstroLite is a lightweight UI library designed specifically for Astro. It provides a set of reusable components that help you build modern, responsive web applications with ease. With AstroLite, you can quickly prototype and develop your projects, leveraging its simplicity and efficiency.
 
 **Available Blocks**
-- Hero Section
+- Header
+- Hero
+- Footer
 
 <p align="right"><a href="#readme-top">Back to top ⬆️</a></p>
 

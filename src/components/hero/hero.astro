@@ -22,15 +22,21 @@ const {
     secondaryText,
     secondaryLink,
 } = Astro.props;
+
+const showUpper = upperText && upperLink;
+const showPrimary = primaryText && primaryLink;
+const showSecondary = secondaryText && secondaryLink;
 ---
 
 <section class="hero-lite">
     {
-        upperText && upperLink && (
+        showUpper ? (
             <div class="upper">
-                <a href={upperLink}>{upperText}</a>
+                <a href={upperLink} title={upperText}>
+                    {upperText}
+                </a>
             </div>
-        )
+        ) : null
     }
     <div class="main">
         <h1>{title}</h1>
@@ -38,18 +44,18 @@ const {
     </div>
     <div class="bottom">
         {
-            primaryText && primaryLink && (
-                <a href={primaryLink} class="primary">
+            showPrimary ? (
+                <a href={primaryLink} class="primary" title={primaryText}>
                     {primaryText}
                 </a>
-            )
+            ) : null
         }
         {
-            secondaryText && secondaryLink && (
-                <a href={secondaryLink} class="secondary">
+            showSecondary ? (
+                <a href={secondaryLink} class="secondary" title={secondaryText}>
                     {secondaryText}
                 </a>
-            )
+            ) : null
         }
     </div>
 </section>
@@ -87,11 +93,11 @@ const {
         .main {
             h1 {
                 font-size: 2.5rem;
-                margin-block: 20px 10px;
+                margin-block: 30px 10px;
             }
 
             p {
-                margin-bottom: 20px;
+                margin-bottom: 30px;
             }
         }
 
