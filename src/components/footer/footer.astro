@@ -1,0 +1,120 @@
+---
+import "../../styles/global.css";
+
+export interface Props {
+    logoText?: string;
+    logoSrc?: string;
+    logoLink?: string;
+    copyright?: string;
+}
+
+const { logoText, logoSrc, logoLink = "/", copyright } = Astro.props;
+---
+
+<footer class="footer-lite">
+    <div class="container">
+        {
+            (logoText || logoSrc) && (
+                <a href={logoLink} class="logo">
+                    {logoSrc ? <img src={logoSrc} alt="Logo" /> : null}
+                    {logoText ? <span>{logoText}</span> : null}
+                </a>
+            )
+        }
+
+        <div class="footer-content">
+            <slot />
+        </div>
+    </div>
+
+    {
+        copyright && (
+            <>
+                <hr />
+                <div class="copyright">{copyright}</div>
+            </>
+        )
+    }
+</footer>
+
+<style>
+    .footer-lite {
+        padding: 40px 20px;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: light-dark(var(--text-dark), var(--text-light));
+
+            img {
+                height: 30px;
+                width: auto;
+            }
+        }
+
+        .footer-content {
+            display: flex;
+            gap: 50px;
+            justify-content: flex-end;
+            align-items: center;
+            flex-wrap: wrap;
+
+            section {
+                margin: 0;
+
+                h4 {
+                    font-size: 1rem;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+
+                    li {
+                        a {
+                            text-decoration: none;
+                            color: light-dark(
+                                var(--text-dark),
+                                var(--text-light)
+                            );
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        hr {
+            width: 100%;
+            border: none;
+            border-top: 1px solid
+                light-dark(hsl(220, 15%, 85%), hsl(220, 15%, 20%));
+            margin: 20px 0;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            text-align: center;
+            color: light-dark(hsl(220, 15%, 40%), hsl(220, 15%, 60%));
+        }
+    }
+</style>

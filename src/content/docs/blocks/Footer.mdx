@@ -4,11 +4,36 @@ description: Footer Block.
 ---
 import { Code } from '@astrojs/starlight/components';
 import Footer from '../../../components/footer/footer.astro';
+import AstroLogo from '../../../assets/astro-logo.webp';
 
-To display a Footer block, use the `<Footer />` component.
+To display a Footer block, use the `<Footer>` component.
+
+The Footer block is a bottom-level section that typically includes a logo, navigation links, and legal information. Use it to provide users with additional information about your website or application.
 
 ## Preview
 
+<Footer 
+    logoText="AstroLite"
+    logoSrc={AstroLogo.src}
+    logoLink=" "
+    copyright="© 2025 AstroLite. All Rights Reserved."
+>
+    <section>
+        <h4>Follow Us</h4>
+        <ul>
+            <li><a href=" ">Github</a></li>
+            <li><a href=" ">Discord</a></li>
+        </ul>
+    </section>
+
+    <section>
+        <h4>Legal</h4>
+        <ul>
+            <li><a href=" ">Privacy Policy</a></li>
+            <li><a href=" ">Terms & Conditions</a></li>
+        </ul>
+    </section>
+</Footer>
 
 
 ## Import
@@ -20,5 +45,34 @@ import { Footer } from 'astro-lite';
 ## Usage
 
 ```js title="src/components/example.astro"
+<Footer 
+    logoText="AstroLite"
+    logoSrc="/logo.svg"
+    logoLink="/home"
+    copyright="© 2025 AstroLite. All Rights Reserved."
+>
+    <section>
+        <h4>Follow Us</h4>
+        <ul>
+            <li><a href="https://example.com/">Github</a></li>
+            <li><a href="https://example.com/">Discord</a></li>
+        </ul>
+    </section>
 
+    <section>
+        <h4>Legal</h4>
+        <ul>
+            <li><a href="https://example.com/">Privacy Policy</a></li>
+            <li><a href="https://example.com/">Terms & Conditions</a></li>
+        </ul>
+    </section>
+</Footer>
 ```
+
+## `<Footer>` Props
+
+- `logoText` (optional)
+- `logoSrc` (optional)
+- `logoLink` (optional)
+- `copyright` (optional)
+- `<slot>` (required) -> Use `<section>` elements to organize the content.
