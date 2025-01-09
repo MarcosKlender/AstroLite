@@ -6,7 +6,7 @@ import { Code } from '@astrojs/starlight/components';
 import Header from '../../../components/header/header.astro';
 import AstroLogo from '../../../assets/astro-logo.webp';
 
-To display a Header block, use the `<Header />` component.
+To display a Header block, use the `<Header>` component.
 
 The Header block is a top-level section that typically includes a logo, navigation links, and user actions. Use it to provide users with easy access to different parts of your website or application.
 
@@ -46,3 +46,14 @@ import { Header } from 'astro-lite';
     <li><a href="/contact">Contact</a></li>
 </Header>
 ```
+
+## `<Header>` Props
+
+- `logoText` (optional)
+- `logoLink` (optional)
+- `logoSrc` (optional)
+- `loginText` (optional)
+- `loginLink` (optional)
+- `signupText` (optional)
+- `signupLink` (optional)
+- `<slot>` (required) -> Use `<li>` and `<a>` elements to create navigation links.
