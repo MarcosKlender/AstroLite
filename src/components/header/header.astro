@@ -2,10 +2,141 @@
 import "../../styles/global.css";
 
 export interface Props {
-    
+    logoText?: string;
+    logoLink?: string;
+    logoSrc?: string;
+    loginText?: string;
+    loginLink?: string;
+    signupText?: string;
+    signupLink?: string;
 }
+
+const {
+    logoText,
+    logoSrc,
+    logoLink = "/",
+    loginText,
+    loginLink,
+    signupText,
+    signupLink,
+} = Astro.props;
 ---
 
-<section class="header-lite">
+<header class="header-lite">
+    <div class="container">
+        {
+            (logoText || logoSrc) && (
+                <a href={logoLink} class="logo">
+                    {logoSrc ? <img src={logoSrc} alt="Logo" /> : null}
+                    {logoText ? <span>{logoText}</span> : null}
+                </a>
+            )
+        }
 
-</section>
+        <nav>
+            <ul>
+                <slot />
+            </ul>
+        </nav>
+
+        {
+            (loginText || signupText) && (
+                <div class="buttons">
+                    {loginText && loginLink && (
+                        <a href={loginLink} class="login" title={loginText}>
+                            {loginText}
+                        </a>
+                    )}
+                    {signupText && signupLink && (
+                        <a href={signupLink} class="signup" title={signupText}>
+                            {signupText}
+                        </a>
+                    )}
+                </div>
+            )
+        }
+    </div>
+</header>
+
+<style>
+    .header-lite {
+        padding: 15px 20px;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: light-dark(var(--text-dark), var(--text-light));
+
+            img {
+                height: 30px;
+                width: auto;
+            }
+        }
+
+        nav {
+            ul {
+                list-style: none;
+                display: flex;
+                gap: 20px;
+
+                li {
+                    margin: 0;
+
+                    a {
+                        text-decoration: none;
+                        color: light-dark(var(--text-dark), var(--text-light));
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+
+            a {
+                padding: 10px 20px;
+                border-radius: 20px;
+                text-decoration: none;
+            }
+
+            .login {
+                color: light-dark(var(--text-dark), var(--text-light));
+
+                &:hover {
+                    background-color: light-dark(
+                        hsl(0, 0%, 90%),
+                        hsl(215, 20%, 15%)
+                    );
+                }
+            }
+
+            .signup {
+                background-color: hsl(225, 75%, 50%);
+                color: var(--text-light);
+
+                &:hover {
+                    background-color: hsl(225, 75%, 45%);
+                }
+            }
+        }
+    }
+</style>

@@ -4,13 +4,25 @@ description: Header Block.
 ---
 import { Code } from '@astrojs/starlight/components';
 import Header from '../../../components/header/header.astro';
+import AstroLogo from '../../../assets/astro-logo.webp';
 
 To display a Header block, use the `<Header />` component.
 
-
+The Header block is a top-level section that typically includes a logo, navigation links, and user actions. Use it to provide users with easy access to different parts of your website or application.
 
 ## Preview
 
+<Header 
+    logoText="AstroLite" 
+    logoSrc={AstroLogo.src}
+    logoLink=" "
+    loginText="Login" loginLink="/login"
+    signupText="Sign up" signupLink="/signup"
+>
+    <li><a href=" ">Home</a></li>
+    <li><a href=" ">Features</a></li>
+    <li><a href=" ">Contact</a></li>
+</Header>
 
 
 ## Import
@@ -22,5 +34,15 @@ import { Header } from 'astro-lite';
 ## Usage
 
 ```js title="src/components/example.astro"
-
+<Header 
+    logoText="AstroLite" 
+    logoSrc="/logo.svg"
+    logoLink="/home"
+    loginText="Login" loginLink="/login"
+    signupText="Sign up" signupLink="/signup"
+>
+    <li><a href="/home">Home</a></li>
+    <li><a href="/features">Features</a></li>
+    <li><a href="/contact">Contact</a></li>
+</Header>
 ```
