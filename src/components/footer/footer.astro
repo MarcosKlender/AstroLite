@@ -39,6 +39,8 @@ const { logoText, logoSrc, logoLink = "/", copyright } = Astro.props;
 
 <style>
     .footer-lite {
+        margin-inline: auto;
+        max-width: 1200px;
         padding: 40px 20px;
 
         .container {
@@ -46,14 +48,13 @@ const { logoText, logoSrc, logoLink = "/", copyright } = Astro.props;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            max-width: 1200px;
             flex-wrap: wrap;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 10px;
             font-weight: bold;
             font-size: 1.2rem;
             text-decoration: none;
@@ -73,6 +74,8 @@ const { logoText, logoSrc, logoLink = "/", copyright } = Astro.props;
             flex-wrap: wrap;
 
             section {
+                display: flex;
+                flex-direction: column;
                 margin: 0;
 
                 h4 {
@@ -82,6 +85,7 @@ const { logoText, logoSrc, logoLink = "/", copyright } = Astro.props;
                 }
 
                 ul {
+                    margin-bottom: 10px;
                     list-style: none;
                     padding: 0;
                     margin: 0;
