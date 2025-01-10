@@ -1,0 +1,84 @@
+---
+import Header from "../components/header/header.astro";
+import Hero from "../components/hero/hero.astro";
+import Footer from "../components/footer/footer.astro";
+
+import AstroLogo from "../assets/astro-logo.webp";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TestingLab</title>
+    </head>
+    <body>
+        <Header
+            logoText="AstroLite"
+            logoSrc={AstroLogo.src}
+            logoLink="/home"
+            loginText="Login"
+            loginLink="/login"
+            signupText="Sign up"
+            signupLink="/signup"
+        >
+            <li><a href="/home">Home</a></li>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </Header>
+
+        <Hero
+            upperLink="https://example.com/"
+            upperText="Lorem ipsum dolor sit amet"
+            title="Welcome to AstroLite"
+            description="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam quis nostrud exercitation."
+            primaryLink="https://example.com/"
+            primaryText="Get Started"
+            secondaryLink="https://example.com/"
+            secondaryText="Learn More"
+        />
+
+        <Footer
+            logoText="AstroLite"
+            logoSrc={AstroLogo.src}
+            logoLink="/home"
+            copyright="© 2025 AstroLite. All Rights Reserved."
+        >
+            <section>
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="https://example.com/">Github</a></li>
+                    <li><a href="https://example.com/">Discord</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="https://example.com/">Privacy Policy</a></li>
+                    <li>
+                        <a href="https://example.com/">Terms & Conditions</a>
+                    </li>
+                </ul>
+            </section>
+        </Footer>
+
+        <style>
+            body {
+                font-family:
+                    system-ui,
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Roboto,
+                    Oxygen,
+                    Ubuntu,
+                    Cantarell,
+                    "Open Sans",
+                    "Helvetica Neue",
+                    sans-serif;
+            }
+        </style>
+    </body>
+</html>
