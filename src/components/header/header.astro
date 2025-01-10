@@ -33,7 +33,11 @@ const {
             )
         }
 
-        <nav>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+            ☰
+        </button>
+
+        <nav id="nav-menu">
             <ul>
                 <slot />
             </ul>
@@ -57,6 +61,17 @@ const {
         }
     </div>
 </header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menu-toggle");
+        const navMenu = document.getElementById("nav-menu");
+
+        menuToggle?.addEventListener("click", () => {
+            navMenu?.classList.toggle("open");
+        });
+    });
+</script>
 
 <style>
     .header-lite {
@@ -87,6 +102,15 @@ const {
             }
         }
 
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: light-dark(var(--text-dark), var(--text-light));
+        }
+
         nav {
             ul {
                 list-style: none;
@@ -112,7 +136,6 @@ const {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin: 0;
 
             a {
                 padding: 10px 20px;
@@ -138,6 +161,48 @@ const {
                 &:hover {
                     background-color: hsl(225, 75%, 45%);
                 }
+            }
+        }
+
+        @media (width < 640px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: light-dark(hsl(220, 15%, 95%), hsl(220, 15%, 10%));
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                padding: 15px 0;
+
+                ul {
+                    flex-direction: column;
+                    width: 100%;
+                    text-align: center;
+
+                    li {
+                        width: 100%;
+
+                        a {
+                            display: block;
+                            padding: 10px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            .buttons {
+                display: none;
             }
         }
     }

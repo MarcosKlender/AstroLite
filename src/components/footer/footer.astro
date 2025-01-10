@@ -47,8 +47,14 @@ const { logoText, logoSrc, logoLink = "/", copyright } = Astro.props;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
             flex-wrap: wrap;
+            width: 100%;
+
+            @media (width < 640px) {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
         }
 
         .logo {
@@ -68,10 +74,16 @@ const { logoText, logoSrc, logoLink = "/", copyright } = Astro.props;
 
         .footer-content {
             display: flex;
-            gap: 50px;
             justify-content: flex-end;
             align-items: center;
             flex-wrap: wrap;
+            gap: 50px;
+
+            @media (width < 640px) {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
 
             section {
                 display: flex;
