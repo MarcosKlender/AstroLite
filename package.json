@@ -1,7 +1,7 @@
 {
   "name": "astro-lite",
-  "description": "A minimal set of large UI components for Astro",
-  "version": "0.0.3",
+  "description": "Open source and lightweight UI blocks library for Astro.",
+  "version": "0.0.4",
   "main": "index.ts",
   "module": "index.ts",
   "homepage": "https://astro-lite.netlify.app",
